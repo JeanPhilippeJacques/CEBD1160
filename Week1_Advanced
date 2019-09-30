@@ -1,0 +1,104 @@
+#Advanced 1
+#Write a Python program to count the number of characters (character frequency) in a string.
+#The expected results are two options
+#Sorted by alphabetical order [{‘a’:4, ‘b’:2, ‘f’:1, ‘i’:1, .....}]
+#Sorted by the repetition of characters in descending order [{‘a’:4, ‘b’:2, ‘k’:2, ‘r’:2,.....}]
+s= input("write your sentence ")
+s=str(s)
+l=list(s)
+l.sort()
+
+
+if len(l)>25:
+#with count
+    x2=[]
+    abc=[]
+    for i in range(97,123):
+        abc.append(chr(i))
+    
+    for i in abc:
+        if i in l:
+            count=l.count(i)
+            x2.append([i,count])
+    print(x2)
+    x2.sort(key=lambda x2:x2[1], reverse=True)
+    print(x2)
+
+else:
+    x=[]
+    t=""
+    c=0  
+    for i in l:
+        if ord(i)>=97 and ord(i)<=123:
+            if t != i:
+                if c>0:
+                    
+                    c=1
+                    t=i
+                else:
+                    c+=1
+                    t=i
+            else:
+                c+=1
+                
+    x.append([t,c])            
+    print(x)
+    x.sort(key=lambda x:x[1], reverse=True)
+    print(x)
+#Advanced 
+#Write a Python program to count the occurrences of each word in a given sentence
+s= input("write your sentence ")
+s=str(s)
+l=list(s)
+x=[]
+word=[]
+count=[]
+w=""
+#creat the list of word
+for i in l:
+    if ord(i)>=97 and ord(i)<=123:
+        w=w+i
+    else:    
+        x.append(w)
+        w=""
+if ord(l[len(l)-1])>=97 and ord(l[len(l)-1])<=123:
+    x.append(w)
+#count word
+for i in x:
+    if i not in word:
+        word.append(i)  
+        count.append(x.count(i))
+     
+for i in range(0,len(word)):       
+    print(str(word[i])+ " :" + str(count[i]))
+    
+x=[]
+for i in range(0,len(word)):
+    x.append([word[i],count[i]])
+    
+x.sort(key=lambda x:x[1], reverse=True)
+print(x)
+#Advanced 3
+#Write a Python program that accepts a comma separated sequence of words as input
+#andprints the unique words in sorted form (alphanumerically)
+s= input("write your a comma separated sequence of words ")
+s=str(s)
+l=list(s)
+x=[]
+string=""
+w=""
+#creat the list of word
+for i in l:
+    if i==",":
+        x.append(w)
+        w=""
+    else:  
+        w=w+i
+        
+if ord(l[len(l)-1])>=97 and ord(l[len(l)-1])<=123:
+    x.append(w)
+#sort + join + print    
+x.sort()
+for i in x:
+    string=string+str(i)
+print(string)
