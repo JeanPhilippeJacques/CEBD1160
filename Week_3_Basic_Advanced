@@ -1,7 +1,8 @@
-
 import random as ran
 #Basic 1------------------------------
+
 def unduplicated(alist):
+    #return  a list without duplicated item
     Nodup=[]
     for I in alist:
         if I not in Nodup:
@@ -10,16 +11,17 @@ def unduplicated(alist):
     print(Nodup)
     return Nodup
 
-#test
+#test Basic 1
 L=[1,1,1,2,2,2,3,3,3]
 LND=unduplicated(L)
 
 
 #Basic 2-------------------------------
 def isinlist(alist,aelement):
+    #return bool if an element is in the list or not
     print(aelement in alist)
 
-#test
+#test Basic2
 L=[1,3,5,7,9]
 X=isinlist(L,3)
 
@@ -28,12 +30,16 @@ X=isinlist(L,3)
 a=[1,4,9,16,25,36,49,64,81,100]
 aeven=[n for n in a if n%2==0]
 
-#test
+#test Basic3
 print(aeven)
 
-#Advanced 1----------------------------
+
+
+
+#Advanced 1 and 3---------------------------------------------------------------------------------------------------
 def guideuser(r,bet):
-    dif=bet-r
+    #print Higher/Lower guidance base guessed number bet and a random number r 
+    dif=bet-r 
     if dif>50: print('Waaaay Lower')
     if 5<=dif<=50: print('Lower')    
     if dif<-50: print('Waaaay Higher')  
@@ -42,7 +48,8 @@ def guideuser(r,bet):
     if dif==0: print('BINGO')
     
     
-def guideuser2(r,bet):  
+def guideuser2(r):  
+    #print even/odd/divisible by 3 guidance on a random number r 
     s=''
     if r%2==0: 
         s=s+'No! It is a even number'
@@ -56,7 +63,8 @@ def guideuser2(r,bet):
     print(s)
 
 def playGuess1():
-     
+    #function picks a number between 0 and 200
+    #User input different values until it guess the hidden number correctly BINGO
     r=ran.randrange(0,201)
     #methode 1
     bet=int(input('Guess between 0 to 200: '))
@@ -69,52 +77,72 @@ def playGuess1():
         print('BINGO \n') 
 
 def playGuess2():
+    #function picks a number between 0 and 200
+    #User input different values until it guess the hidden number correctly BINGO
+    #Use 2 different way to guide the player and print the number of guesses with the two method
     pickm1=1  
     pickm2=1
     npick=[]
     r=ran.randrange(0,201)
-    #methode 1
+    #methode 1 Higher/Lower only
     bet=int(input('Guess between 0 to 200: '))
     if r==bet: 
         print('BINGO \n')
     else:    
-        while r!=bet:
+        while r!=bet :
             guideuser(r,bet)
             bet=int(input('Guess between 0 to 200: '))
-            pickm1=pickm1+1  
-        print('BINGO /n') 
+            pickm1=pickm1+1
+            if pickm1==10:
+                break
+        if r==bet:   
+            print('BINGO /n') 
+        else:
+            print('GAME OVER') 
     npick.append(pickm1)
-    #methode 2
+    #methode 2 Higher/Lower/ and even/odd/divisible after 2 guess
     bet=int(input('Guess between 0 to 200: '))
     if r==bet: 
         print('BINGO \n')
     else:    
         while r!=bet:
             if pickm2>2:
-                guideuser2(r,bet)
+                guideuser2(r)
             else:
                 guideuser(r,bet)
             bet=int(input('Guess between 0 to 200: '))
-            pickm2=pickm2+1  
-        print('BINGO \n')    
+            pickm2=pickm2+1 
+            if pickm2==10:
+                break
+        if r==bet:   
+            print('BINGO /n') 
+        else:
+            print('GAME OVER')   
     npick.append(pickm2)
     return(npick)
     
-#Test1    
-print("Play Guess a number")
+#Test advanced 1    
+print("\n Let's play Guess a number")
 playGuess1()
 
-#Test3
+#Test advanced 3
 print("Play Guess 2 number")
 result=playGuess2()
-print("Bravo you got it in "+ str(result[0]) + " try and "+ str(result[1]) + " try.\n")
+print("Good job you got it in "+ str(result[0]) + " try and "+ str(result[1]) + " try.\n")
 
 
-#Advanced 2----------------------------
+
+
+
+
+
+
+#Advanced 2 and 4--------------------------------------------------------------------------------------------
 def askguess(rep,lastguess,tolow,tohigh,close):
+    #return the function guess number base on uaer reply, the last function guess 
+    #and colected user guidance lower higher close 
     maxmin=0
-    minmax=200
-    
+    minmax=200   
     if len(tolow)>=1:
         maxmin=max(tolow)
     if len(tohigh)>=1:
@@ -142,7 +170,9 @@ def askguess(rep,lastguess,tolow,tohigh,close):
         newguess=-1
     return newguess
 
-def askguess2(rep,lastguess,tolow,tohigh,close,even,divby3):
+def askguess2(rep,lastguess,tolow,tohigh,close,even,divby3,tryed):
+    #return the function guess number base on uaer reply, the last function guess 
+    #and colected user guidance lower higher close and if even an or divisible by 3
     maxmin=0
     minmax=200
     x=0
@@ -158,31 +188,38 @@ def askguess2(rep,lastguess,tolow,tohigh,close,even,divby3):
     r=ran.randrange(maxmin,minmax)
     e=False
     d=False
-    print(even)
-    print(divby3)
     if r%2==0:
         e=True
     if r%3==0:
         d=True  
-    while r in close or e!=even or divby3!=d:
+    
+    while r in close or r in tryed or e!=even or divby3!=d:
         r=ran.randrange(maxmin,minmax)
         x=x+1
         if r%2==0:
             e=True
+        else:
+            e=False
         if r%3==0:
             d=True 
-        if x>200:
+        else:
+            d=False
+            
+        if x>100:
             break
+            print('I give up')
+          
     newguess=r
     return newguess   
 
-def PlayMakeCPUGuess():    
-    print('Picks a number between 0 and 200. Then CPU I will try to guess and you should guide it')
+def PlayMakeCPUGuess(): 
+    #Function tha let user pick number and ask user for guidance Higher/Lower to help guessing that number
+    print('Picks a number between 0 and 200. I will try to guess it and you have to guide me')
     if str(input('Type y if you are ready : '))=='y':
         r=ran.randrange(0,201)
-        print('My guess is : ' + str(r))
+        print('\n My guess is : ' + str(r))
         lastguess=r
-        rep=int(input('Tape 1 for: Way Lower, 2 for: Lower, 3 for: Way Higher, 4 for: Higher, 5 for: Close, 6 for: BINGO : '))
+        rep=int(input(' 1 for: Way Lower(-50+)\n 2 for: Lower-(-5 to -50)\n 3 for: Way Higher(50+)\n 4 for: Higher(5 to 50)\n 5 for: Close(+-5)\n 6 for: BINGO : '))
         tolow=[]
         tohigh=[]
         close=[]
@@ -196,7 +233,7 @@ def PlayMakeCPUGuess():
             r=askguess(rep,lastguess,tolow,tohigh,close)
             print('My guess is : ' + str(r))
             lastguess=r
-            rep=int(input('Tape 1 for: Way Lower, 2 for: Lower, 3 for: Way Higher, 4 for: Higher, 5 for: Close, 6 for: BINGO : '))
+            rep=int(input(' 1 for: Way Lower(-50+)\n 2 for: Lower-(-5 to -50)\n 3 for: Way Higher(50+)\n 4 for: Higher(5 to 50)\n 5 for: Close(+-5)\n 6 for: BINGO : '))
             if rep==1: tohigh.append(r-50)
             if rep==2:tohigh.append(r-5)
             if rep==3:tolow.append(r+50)
@@ -206,15 +243,18 @@ def PlayMakeCPUGuess():
         
 
 def PlayMakeCPUGuess2():    
-    print('Picks a number between 0 and 200. Then CPU I will try to guess and you should guide it')
+    #Function tha let user pick 2 numbers and ask user for guidance Higher/Lower/ 
+    #and even/odd/divisible after 2 guess to help guessing the second number 
+    #Function return number of try in a list
+    print('Picks a number between 0 and 200. I will try to guess it and you have to guide me')
     if str(input('Type y if you are ready : '))=='y':
         pickm1=1  
         
         npick=[]
         r=ran.randrange(0,201)
-        print('My guess is : ' + str(r))
+        print('\nMy guess is : ' + str(r))
         lastguess=r
-        rep=int(input('Tape 1 for: Way Lower, 2 for: Lower, 3 for: Way Higher, 4 for: Higher, 5 for: Close, 6 for: BINGO : '))
+        rep=int(input(' 1 for: Way Lower(-50+)\n 2 for: Lower-(-5 to -50)\n 3 for: Way Higher(50+)\n 4 for: Higher(5 to 50)\n 5 for: Close(+-5)\n 6 for: BINGO : '))
         tolow=[]
         tohigh=[]
         close=[]
@@ -223,42 +263,49 @@ def PlayMakeCPUGuess2():
         if rep==3:tolow.append(r+50)
         if rep==4:tolow.append(r+5)
         if rep==5:close.append(r)
-        #method1y
+        #method1
         while rep!=6:
             r=askguess(rep,lastguess,tolow,tohigh,close)
-            print('My guess is : ' + str(r))
+            print('\n My guess is : ' + str(r))
             lastguess=r
-            rep=int(input('Tape 1 for: Way Lower, 2 for: Lower, 3 for: Way Higher, 4 for: Higher, 5 for: Close, 6 for: BINGO : '))
+            rep=int(input(' 1 for: Way Lower(-50+)\n 2 for: Lower-(-5 to -50)\n 3 for: Way Higher(50+)\n 4 for: Higher(5 to 50)\n 5 for: Close(+-5)\n 6 for: BINGO : '))
             if rep==1: tohigh.append(r-50)
             if rep==2:tohigh.append(r-5)
             if rep==3:tolow.append(r+50)
             if rep==4:tolow.append(r+5)
             if rep==5:close.append(r)
             pickm1=pickm1+1
-        print('Yayyyyyyyyyyy')
+            if pickm1==10:
+                break
+        if rep==6:    
+            print('Yayyyyyyyyyyy')
+        else:
+            print('GAME OVER')
+        
         npick.append(pickm1)
-        #method2
-        print('Picks a number between 0 and 200. Then CPU I will try to guess and you should guide it')
+        #method2 use even odd divisible by 3 after 2 try
+        print('Picks a number between 0 and 200. I will try to guess it and you have to guide me')
         if str(input('Type y if you are ready : '))=='y':
             pickm2=1
             r=ran.randrange(0,201)
-            print('My guess is : ' + str(r))
+            print('\n My guess is : ' + str(r))
             lastguess=r
-            rep=int(input('Tape 1 for: Way Lower, 2 for: Lower, 3 for: Way Higher, 4 for: Higher, 5 for: Close, 6 for: BINGO : '))
+            rep=int(input(' 1 for: Way Lower(-50+)\n 2 for: Lower-(-5 to -50)\n 3 for: Way Higher(50+)\n 4 for: Higher(5 to 50)\n 5 for: Close(+-5)\n 6 for: BINGO : '))
             tolow=[]
             tohigh=[]
             close=[]
+            tryed=[]
             if rep==1: tohigh.append(r-50)
             if rep==2:tohigh.append(r-5)
             if rep==3:tolow.append(r+50)
             if rep==4:tolow.append(r+5)
             if rep==5:close.append(r)
-            while rep!=6 :
-                if pickm2<=2:
+            while rep!=6:
+                if pickm2<2:
                     r=askguess(rep,lastguess,tolow,tohigh,close)
-                    print('My guess is : ' + str(r))
+                    print('\n My guess is : ' + str(r))
                     lastguess=r
-                    rep=int(input('Tape 1 for: Way Lower, 2 for: Lower, 3 for: Way Higher, 4 for: Higher, 5 for: Close, 6 for: BINGO : '))
+                    rep=int(input( '1 for: Way Lower(-50+)\n 2 for: Lower-(-5 to -50)\n 3 for: Way Higher(50+)\n 4 for: Higher(5 to 50)\n 5 for: Close(+-5)\n 6 for: BINGO : '))
                     if rep==1: tohigh.append(r-50)
                     if rep==2:tohigh.append(r-5)
                     if rep==3:tolow.append(r+50)
@@ -267,39 +314,43 @@ def PlayMakeCPUGuess2():
                     pickm2=pickm2+1
                 else:
 
-                    if pickm2==3:
+                    if pickm2==2:
                         even=False
                         divby3=False
                         r=askguess(rep,lastguess,tolow,tohigh,close)
-                        print('My guess is : ' + str(r))
+                        print('\n My guess is : ' + str(r))
                         lastguess=r
-                    if pickm2>3:
-                         r=askguess2(rep,lastguess,tolow,tohigh,close,even,divby3)
-                         print('My guess is : ' + str(r))
-                         lastguess=r
-                         
-                    
-                    rep=int(input('Tape 1 if it is a even number: 2 for odd :  6 for: BINGO : '))
-                    if rep==1:
-                        even=True
-                    if rep!=6:
-                        rep=int(input('Tape 1 if it is a number divisible by 3: 2 If not :  6 for: BINGO : '))
+                        tryed.append(r)
+                        rep=int(input(' 1 if it is a even number \n 2 for odd \n 6 for: BINGO : '))
                         if rep==1:
-                            divby3=True
+                            even=True
+                        if rep!=6:
+                            rep=int(input(' 1 if it is a number divisible by 3 \n 2 If not divisible by 3 \n 6 for: BINGO : '))
+                            if rep==1:
+                                divby3=True
+                        
+                    if pickm2>=3:
+                         r=askguess2(rep,lastguess,tolow,tohigh,close,even,divby3,tryed)
+                         print('\n My guess is : ' + str(r))
+                         lastguess=r
+                         tryed.append(r)
+                         rep=int(input(' 1 for not good  \n 6 for: BINGO : '))
+
                     pickm2=pickm2+1
-        print('Yayyyyyyyyyyy')
+                    if pickm2==10:
+                        break
+        if rep==6:    
+            print('Yayyyyyyyyyyy')
+        else:
+            print('GAME OVER')
+        
         npick.append(pickm2)
         return npick
-#Test2
+#Test advanced 2
 PlayMakeCPUGuess()        
 
-#test4        
+#test advanced 4        
 n=[]    
 n=PlayMakeCPUGuess2()     
 print("Good job CPU got it in "+ str(n[0]) + " try and "+ str(n[1]) + " try.\n")    
-    
-    
-    
-    
-    
     
