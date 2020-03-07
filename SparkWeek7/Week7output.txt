@@ -1,0 +1,130 @@
+WordCount: Top 10 words excluding “you”, “to”, “your”, “the”, “a”, “of”, “and”
+
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
++-----+----+
+|count|word|
++-----+----+
+|  747|that|
+|  649|  it|
+|  616|  in|
+|  560|  is|
+|  537| for|
+|  428|  on|
+|  424| are|
+|  411|  if|
+|  391|   s|
+|  387|   i|
++-----+----+
+only showing top 10 rows
+
+
+Popular Movies: create the top 10 aggregated movies with number of ratings more than200
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
++-----+-----+------------------+--------------------+-----------+----+--------------------+---+---+---+---+---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+|items|count|              Mean|                 _c1|        _c2| _c3|                 _c4|_c5|_c6|_c7|_c8|_c9|_c10|_c11|_c12|_c13|_c14|_c15|_c16|_c17|_c18|_c19|_c20|_c21|_c22|_c23|
++-----+-----+------------------+--------------------+-----------+----+--------------------+---+---+---+---+---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+|  318|  298| 4.466442953020135|Schindler's List ...|01-Jan-1993|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|
+|  483|  243|  4.45679012345679|   Casablanca (1942)|01-Jan-1942|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   1|   0|   0|   1|   0|
+|   64|  283| 4.445229681978798|Shawshank Redempt...|01-Jan-1994|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|
+|  603|  209|4.3875598086124405|  Rear Window (1954)|01-Jan-1954|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|   1|   0|   0|
+|   12|  267| 4.385767790262173|Usual Suspects, T...|14-Aug-1995|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|
+|   50|  583|4.3584905660377355|    Star Wars (1977)|01-Jan-1977|null|http://us.imdb.co...|  0|  1|  1|  0|  0|   0|   0|   0|   0|   0|   0|   0|   0|   0|   1|   1|   0|   1|   0|
+|  427|  219| 4.292237442922374|To Kill a Mocking...|01-Jan-1962|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|
+|  357|  264| 4.291666666666667|One Flew Over the...|01-Jan-1975|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|
+|   98|  390|  4.28974358974359|Silence of the La...|01-Jan-1991|null|http://us.imdb.co...|  0|  0|  0|  0|  0|   0|   0|   0|   1|   0|   0|   0|   0|   0|   0|   0|   1|   0|   0|
+|  127|  413| 4.283292978208232|Godfather, The (1...|01-Jan-1972|null|http://us.imdb.co...|  0|  1|  0|  0|  0|   0|   1|   0|   1|   0|   0|   0|   0|   0|   0|   0|   0|   0|   0|
++-----+-----+------------------+--------------------+-----------+----+--------------------+---+---+---+---+---+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+only showing top 10 rows
+
+
+Super Hero: Print the top 10 superhero as a list.
+
+CAPTAIN AMERICA is the most popular superhero with 1933 co-appearances.
+(1933,859)
+(1741,5306)
+(1528,2664)
+(1426,5716)
+(1394,6306)
+(1386,3805)
+(1371,2557)
+(1345,4898)
+(1289,5736)
+(1280,403)
++-----+--------------------+
+|count|                name|
++-----+--------------------+
+| 1933|     CAPTAIN AMERICA|
+| 1741|SPIDER-MAN/PETER PAR|
+| 1528|IRON MAN/TONY STARK |
+| 1426|THING/BENJAMIN J. GR|
+| 1394|    WOLVERINE/LOGAN |
+| 1386|MR. FANTASTIC/REED R|
+| 1371|HUMAN TORCH/JOHNNY S|
+| 1345|SCARLET WITCH/WANDA |
+| 1289|THOR/DR. DONALD BLAK|
+| 1280|BEAST/HENRY &HANK& P|
++-----+--------------------+
+
+Healthcare Use Case:
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
++-----+------+----+------------+-------------+------------+-------------+--------------+-----------------+----+---------------+------+
+|   id|gender| age|hypertension|heart_disease|ever_married|    work_type|Residence_type|avg_glucose_level| bmi| smoking_status|stroke|
++-----+------+----+------------+-------------+------------+-------------+--------------+-----------------+----+---------------+------+
+|30669|  Male| 3.0|           0|            0|          No|     children|         Rural|            95.12|18.0|           null|     0|
+|30468|  Male|58.0|           1|            0|         Yes|      Private|         Urban|            87.96|39.2|   never smoked|     0|
+|16523|Female| 8.0|           0|            0|          No|      Private|         Urban|           110.89|17.6|           null|     0|
+|56543|Female|70.0|           0|            0|         Yes|      Private|         Rural|            69.04|35.9|formerly smoked|     0|
+|46136|  Male|14.0|           0|            0|          No| Never_worked|         Rural|           161.28|19.1|           null|     0|
+|32257|Female|47.0|           0|            0|         Yes|      Private|         Urban|           210.95|50.1|           null|     0|
+|52800|Female|52.0|           0|            0|         Yes|      Private|         Urban|            77.59|17.7|formerly smoked|     0|
+|41413|Female|75.0|           0|            1|         Yes|Self-employed|         Rural|           243.53|27.0|   never smoked|     0|
+|15266|Female|32.0|           0|            0|         Yes|      Private|         Rural|            77.67|32.3|         smokes|     0|
+|28674|Female|74.0|           1|            0|         Yes|Self-employed|         Urban|           205.84|54.6|   never smoked|     0|
++-----+------+----+------------+-------------+------------+-------------+--------------+-----------------+----+---------------+------+
+only showing top 10 rows
+
+root
+ |-- id: integer (nullable = true)
+ |-- gender: string (nullable = true)
+ |-- age: double (nullable = true)
+ |-- hypertension: integer (nullable = true)
+ |-- heart_disease: integer (nullable = true)
+ |-- ever_married: string (nullable = true)
+ |-- work_type: string (nullable = true)
+ |-- Residence_type: string (nullable = true)
+ |-- avg_glucose_level: double (nullable = true)
+ |-- bmi: double (nullable = true)
+ |-- smoking_status: string (nullable = true)
+ |-- stroke: integer (nullable = true)
+
++-------------+---------------+
+|    work_type|work_type_count|
++-------------+---------------+
+|      Private|            441|
+|Self-employed|            251|
+|     Govt_job|             89|
+|     children|              2|
++-------------+---------------+
+
++------+------------+-------------------+
+|gender|count_gender|            percent|
++------+------------+-------------------+
+|Female|       25665|  59.13594470046083|
+| Other|          11|0.02534562211981567|
+|  Male|       17724|  40.83870967741935|
++------+------------+-------------------+
+
++---+------+----+------------+-------------+------------+---------+--------------+-----------------+------------------+--------------+------+-----------+-----------------+--------------+-------------------+-------------------+-------------+---------------+-------------+-----------------+-----------------+--------------------+---------------+--------------------+----------+
+| id|gender| age|hypertension|heart_disease|ever_married|work_type|Residence_type|avg_glucose_level|               bmi|smoking_status|stroke|genderIndex|ever_marriedIndex|work_typeIndex|Residence_typeIndex|smoking_statusIndex|    genderVec|ever_marriedVec| work_typeVec|Residence_typeVec|smoking_statusVec|            features|  rawPrediction|         probability|prediction|
++---+------+----+------------+-------------+------------+---------+--------------+-----------------+------------------+--------------+------+-----------+-----------------+--------------+-------------------+-------------------+-------------+---------------+-------------+-----------------+-----------------+--------------------+---------------+--------------------+----------+
+|  6|Female|21.0|           0|            0|          No|  Private|         Urban|            75.73|28.605038390004545|  never smoked|     0|        0.0|              1.0|           0.0|                0.0|                0.0|(2,[0],[1.0])|      (1,[],[])|(4,[0],[1.0])|    (1,[0],[1.0])|    (3,[0],[1.0])|(16,[0,2,6,10,11,...|[24606.0,168.0]|[0.99321869702107...|       0.0|
+|  7|Female|44.0|           0|            0|         Yes|  Private|         Urban|           222.75|              19.6|  never smoked|     0|        0.0|              0.0|           0.0|                0.0|                0.0|(2,[0],[1.0])|  (1,[0],[1.0])|(4,[0],[1.0])|    (1,[0],[1.0])|    (3,[0],[1.0])|(16,[0,2,5,6,10,1...|[24606.0,168.0]|[0.99321869702107...|       0.0|
+| 14|Female|67.0|           0|            0|         Yes|  Private|         Urban|           111.04|              25.1|  never smoked|     0|        0.0|              0.0|           0.0|                0.0|                0.0|(2,[0],[1.0])|  (1,[0],[1.0])|(4,[0],[1.0])|    (1,[0],[1.0])|    (3,[0],[1.0])|(16,[0,2,5,6,10,1...| [2771.0,115.0]|[0.96015246015246...|       0.0|
+| 15|Female|74.0|           0|            0|          No| Govt_job|         Rural|           104.73|28.605038390004545|       No Info|     0|        0.0|              1.0|           3.0|                1.0|                1.0|(2,[0],[1.0])|      (1,[],[])|(4,[3],[1.0])|        (1,[],[])|    (3,[1],[1.0])|(16,[0,2,9,11,12,...| [2771.0,115.0]|[0.96015246015246...|       0.0|
+| 20|  Male|36.0|           0|            0|         Yes| Govt_job|         Urban|            89.79|              27.3|        smokes|     0|        1.0|              0.0|           3.0|                0.0|                3.0|(2,[1],[1.0])|  (1,[0],[1.0])|(4,[3],[1.0])|    (1,[0],[1.0])|        (3,[],[])|(16,[1,2,5,9,10,1...|[24606.0,168.0]|[0.99321869702107...|       0.0|
++---+------+----+------------+-------------+------------+---------+--------------+-----------------+------------------+--------------+------+-----------+-----------------+--------------+-------------------+-------------------+-------------+---------------+-------------+-----------------+-----------------+--------------------+---------------+--------------------+----------+
+only showing top 5 rows
+
+Test Error = 0.018247036805988825
+Picked up _JAVA_OPTIONS: -Xmx51200
+
