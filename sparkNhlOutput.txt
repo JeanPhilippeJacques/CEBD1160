@@ -1,0 +1,359 @@
+GeneralizedLinearRegression
+Test
++------------------+------------+---------+----------+
+|        prediction|nexty_points|firstName|  lastName|
++------------------+------------+---------+----------+
+| 65.44976562973875|         108|   Connor|   McDavid|
+| 84.88809749694724|         104|   Sidney|    Crosby|
+| 80.06257934005271|          99|   Nathan| MacKinnon|
+| 69.55160836087214|          98|   Steven|   Stamkos|
+|47.833204187401066|          92|  Brayden|     Point|
+| 75.01254247277143|          89|   Sidney|    Crosby|
+| 78.16443804747621|          89|  Patrick|      Kane|
+| 66.48074508971092|          87|    Mikko|  Rantanen|
+|  61.2489447326609|          87|     Ryan|   Getzlaf|
+| 64.12621952158929|          84|     Mark| Scheifele|
+| 67.94932095240847|          84|     John|   Tavares|
+| 35.23857875159263|          84|    Mikko|  Rantanen|
+| 60.82433959745708|          83|    Brent|     Burns|
+| 52.90536407960042|          83|Sebastian|       Aho|
+| 67.35464611947282|          80|    Tyler|    Seguin|
+|   62.419131930807|          79|    Jamie|      Benn|
+|  66.9385317385719|          78|  Nicklas| Backstrom|
+| 50.66604147943258|          78|   Johnny|  Gaudreau|
+| 65.47559404641947|          78|    Tyler|    Seguin|
+| 64.85575348238478|          76|     Sean| Couturier|
+| 74.15843013790266|          76|  Patrick|      Kane|
+| 52.77560369348737|          76|     Alex| DeBrincat|
+| 52.68220437967716|          76|     Eric|     Staal|
+|  41.7303572422843|          76|     Jiri|    Hudler|
+| 36.77903021546592|          76|     Jake|  Guentzel|
+| 50.61814632109258|          74|     Mika| Zibanejad|
+| 73.94754640415704|          73|   Claude|    Giroux|
+|32.489021580274084|          73| Vladimir| Tarasenko|
+| 70.46400025911828|          72|   Evgeny| Kuznetsov|
+| 68.01945884645511|          72|   Evgeni|    Malkin|
+| 56.19359309017045|          70|     John|   Carlson|
+| 48.37639726236648|          70|     Matt|   Duchene|
+|  53.4430810778432|          70|    Logan|   Couture|
+|49.790278179737015|          69|     Rick|      Nash|
+| 48.57384701441197|          69|  Rickard|    Rakell|
+| 64.04337809601793|          69|  Patrick|      Kane|
+| 50.61225272426839|          69|    David|    Krejci|
+|63.403301167500786|          68|      Joe|  Pavelski|
+|31.483404269056564|          67|  Joffrey|     Lupul|
+| 61.30237876435967|          67|    Logan|   Couture|
+|58.572426559875794|          67|      Max|Pacioretty|
+| 50.97574765095953|          67|     John| Klingberg|
+| 63.40254409321551|          67|    Pavel|   Datsyuk|
+| 27.52654048170416|          67|  Jaromir|      Jagr|
+| 39.46756173248002|          66|  Jaromir|      Jagr|
+|39.154118891531766|          66|   Nikita|  Kucherov|
+|34.489677971494984|          66|     Timo|     Meier|
+| 47.80484058606669|          66|  Brayden|     Point|
+| 36.70528476070115|          65|      Max|Pacioretty|
+| 65.85272684794859|          64|   Steven|   Stamkos|
++------------------+------------+---------+----------+
+only showing top 50 rows
+
+GeneralizedLinearRegression
+Root Mean Squared Error (RMSE) on test data = 12.081956739301932
+
+GeneralizedLinearRegression
+Forecats
++------------------+----------+----------+
+|        prediction| firstName|  lastName|
++------------------+----------+----------+
+|102.18017264338118|    Connor|   McDavid|
+| 94.50925413344657|    Nikita|  Kucherov|
+| 89.82300413591292|    Nathan| MacKinnon|
+|  85.6192323290569|      Leon| Draisaitl|
+| 85.05000775031772|Aleksander|    Barkov|
+| 82.90708992352313|    Auston|  Matthews|
+| 82.58475473155102|  Mitchell|    Marner|
+| 81.22537964439982|      Jack|    Eichel|
+| 80.32945684579431|   Patrick|      Kane|
+| 79.80417573276407|     David|  Pastrnak|
+| 79.77709511608771| Sebastian|       Aho|
+| 78.39002334784607|     Mikko|  Rantanen|
+| 78.19658141009018|    Johnny|  Gaudreau|
+| 76.05378030930194|      Brad|  Marchand|
+| 75.78576990426279|    Sidney|    Crosby|
+| 75.34975139844153|   Brayden|     Point|
+|  74.6658852521191|     Dylan|    Larkin|
+| 74.22448083758991|    Steven|   Stamkos|
+| 74.16448490760388|      Mark| Scheifele|
+| 72.18422947295346|      John|   Tavares|
+|   71.576346491187|  Jonathan| Huberdeau|
+|  71.4475154622778|      Sean|   Monahan|
+| 71.21413281417438|   Patrice|  Bergeron|
+| 71.20844357021986|      Alex|  Ovechkin|
+| 70.46303737779556|      Mark|     Stone|
+| 70.30602827198618|   Gabriel| Landeskog|
+| 70.25093400043113|    Artemi|   Panarin|
+| 69.50481236181793|     Tyler|    Seguin|
+| 69.32505443249988|    Claude|    Giroux|
+| 68.99939480363696|    Evgeni|    Malkin|
+| 68.90896237561708|   Matthew|   Tkachuk|
+| 68.18619897142673|     Elias|Pettersson|
+| 67.76652854903318|  Jonathan|     Toews|
+| 67.31565286130797|    Evgeny| Kuznetsov|
+| 67.04664358159891|      Sean| Couturier|
+| 67.03298438437696|      Ryan|  O'Reilly|
+| 66.77690836767385|    Taylor|      Hall|
+|  66.4669506999702|     Brent|     Burns|
+|  66.3021650123543|     Blake|   Wheeler|
+| 66.27637873060894|      Kyle|    Connor|
+| 65.45021181646814| Alexander|   Radulov|
+| 64.24128017163105|     Brock|    Boeser|
+| 64.16155301884316|      Mika| Zibanejad|
+| 64.15561248820313|     Tomas|     Hertl|
+| 64.11500395000212|      Jake|  Guentzel|
+| 63.02690332966267|     Elias|  Lindholm|
+|62.927156540707074|       Max|      Domi|
+|62.858698029666925|    Morgan|    Rielly|
+|62.685182599410155|     Teuvo|Teravainen|
+| 62.62980068884451|   Nicklas| Backstrom|
++------------------+----------+----------+
+only showing top 50 rows
+
+
+RandomForestRegressor
+Test
++------------------+------------+---------+----------+
+|        prediction|nexty_points|firstName|  lastName|
++------------------+------------+---------+----------+
+| 79.98439407715676|         108|   Connor|   McDavid|
+|  73.0603654194415|         104|   Sidney|    Crosby|
+| 67.00659147869675|          99|   Nathan| MacKinnon|
+| 95.34618436257902|          98|   Steven|   Stamkos|
+| 55.90259749998343|          92|  Brayden|     Point|
+| 73.11873587575954|          89|  Patrick|      Kane|
+|  72.9002775811034|          89|   Sidney|    Crosby|
+|  58.1047685803753|          87|     Ryan|   Getzlaf|
+| 57.97040683629332|          87|    Mikko|  Rantanen|
+| 73.00771353894552|          84|     John|   Tavares|
+|  86.5279907901599|          84|     Mark| Scheifele|
+| 44.55995502457095|          84|    Mikko|  Rantanen|
+| 54.96507300017456|          83|Sebastian|       Aho|
+| 72.18304224034237|          83|    Brent|     Burns|
+| 74.55735946895024|          80|    Tyler|    Seguin|
+|  83.7089270190822|          79|    Jamie|      Benn|
+| 55.97786869886467|          78|   Johnny|  Gaudreau|
+| 70.53807504242515|          78|  Nicklas| Backstrom|
+| 79.45848020399252|          78|    Tyler|    Seguin|
+| 45.96114187598477|          76|     Jake|  Guentzel|
+| 88.55910816186415|          76|  Patrick|      Kane|
+| 60.82149187605135|          76|     Sean| Couturier|
+| 48.50831046869075|          76|     Alex| DeBrincat|
+| 40.91030975621445|          76|     Jiri|    Hudler|
+|  51.5308462045828|          76|     Eric|     Staal|
+| 49.08750239727267|          74|     Mika| Zibanejad|
+| 66.05071318417134|          73|   Claude|    Giroux|
+| 42.70236057507088|          73| Vladimir| Tarasenko|
+| 62.10533129700649|          72|   Evgeny| Kuznetsov|
+| 67.21418985930144|          72|   Evgeni|    Malkin|
+| 54.78992393623618|          70|     John|   Carlson|
+| 49.83041808662268|          70|     Matt|   Duchene|
+|54.253777372076286|          70|    Logan|   Couture|
+|40.946345269176646|          69|     Rick|      Nash|
+|49.429627458147294|          69|    David|    Krejci|
+| 60.70414783876341|          69|  Patrick|      Kane|
+|  45.9917937915791|          69|  Rickard|    Rakell|
+| 69.51527663794005|          68|      Joe|  Pavelski|
+|25.395420486780935|          67|  Joffrey|     Lupul|
+| 60.08465674190607|          67|    Pavel|   Datsyuk|
+| 55.10321737795376|          67|      Max|Pacioretty|
+|46.050222022450036|          67|     John| Klingberg|
+|44.928054626936316|          67|  Jaromir|      Jagr|
+|58.600041748976935|          67|    Logan|   Couture|
+| 49.62042422471641|          66|   Nikita|  Kucherov|
+| 40.88168551306178|          66|  Brayden|     Point|
+| 39.96832714489314|          66|  Jaromir|      Jagr|
+| 33.61442258132978|          66|     Timo|     Meier|
+| 29.31082760247379|          65|      Max|Pacioretty|
+| 65.28965501260188|          64|   Steven|   Stamkos|
++------------------+------------+---------+----------+
+only showing top 50 rows
+
+RandomForestRegressor
+Root Mean Squared Error (RMSE) on test data = 12.238878685607988
+
+RandomForestRegressor
+Forecast
++------------------+----------+----------+
+|        prediction| firstName|  lastName|
++------------------+----------+----------+
+| 98.47852532679738|      Jack|    Eichel|
+| 98.34220588235294|    Connor|   McDavid|
+| 92.16808476041932|     David|  Pastrnak|
+| 92.14489527629233|    Nathan| MacKinnon|
+| 91.55770777629235|    Artemi|   Panarin|
+| 91.49020174678263|      Brad|  Marchand|
+|  90.9070202423855|    Sidney|    Crosby|
+| 90.36865429505136|      Leon| Draisaitl|
+| 90.09621511046144|    Nikita|  Kucherov|
+| 89.75988039533996|     Mikko|  Rantanen|
+| 89.18643849206349|      Phil|    Kessel|
+| 88.82674138973772|      Mark| Scheifele|
+| 87.60838505856889|Aleksander|    Barkov|
+| 85.36823387708353|      Sean|   Monahan|
+|  84.3608128958105|    Steven|   Stamkos|
+| 84.35610154915062|    Claude|    Giroux|
+| 84.10314054409642|    Auston|  Matthews|
+| 83.66902488686566|     Tyler|    Seguin|
+| 83.24345840897072|    Evgeni|    Malkin|
+| 83.05711400119489|      John|   Tavares|
+| 81.92803387132192|      Alex|  Ovechkin|
+| 81.89919263204506|    Evgeny| Kuznetsov|
+| 81.45201624968169|   Brayden|     Point|
+| 78.85722187325779|   Patrick|      Kane|
+| 78.38609597746596|     Brent|     Burns|
+| 78.35704274075597|    Johnny|  Gaudreau|
+| 78.17748775778429|  Jonathan| Huberdeau|
+| 76.92867271661629|   Gabriel| Landeskog|
+|  76.7845129603384| Sebastian|       Aho|
+| 76.63936432268281|     Blake|   Wheeler|
+| 75.72323464481313|   Patrice|  Bergeron|
+|  75.5024826270221|  Mitchell|    Marner|
+| 74.95239576535437|      Mark|     Stone|
+|  73.8379238034927|      Sean| Couturier|
+| 73.00567328552506|    Taylor|      Hall|
+| 72.95026066905731|   Nicklas| Backstrom|
+| 71.88981265549327| Alexander|   Radulov|
+| 70.81831551740679|      Ryan|  O'Reilly|
+| 69.36191496904021|  Jonathan|     Toews|
+| 68.28531261498237|     Teuvo|Teravainen|
+| 67.94249630644393|      John|   Carlson|
+| 67.05297787431365|      Kyle|    Connor|
+| 67.02268965295086|      Mika| Zibanejad|
+| 66.17880921256979|   Matthew|   Tkachuk|
+|   65.705572034487|   Evgenii|   Dadonov|
+| 65.58513372136298|  Vladimir| Tarasenko|
+| 63.68383931847641|      Erik|  Karlsson|
+| 62.81377074209233|     Logan|   Couture|
+|62.078844079552745|       Max|      Domi|
+| 61.87223557144599|     Filip|  Forsberg|
++------------------+----------+----------+
+only showing top 50 rows
+
+
+
+GBTRegressor
+Test
++------------------+------------+---------+----------+
+|        prediction|nexty_points|firstName|  lastName|
++------------------+------------+---------+----------+
+| 75.42594965737398|         108|   Connor|   McDavid|
+|  86.6671891767186|         104|   Sidney|    Crosby|
+| 58.82764197498422|          99|   Nathan| MacKinnon|
+| 83.71712563600046|          98|   Steven|   Stamkos|
+| 47.91596581457972|          92|  Brayden|     Point|
+|127.60145338505465|          89|  Patrick|      Kane|
+| 87.57070322973853|          89|   Sidney|    Crosby|
+| 64.63692503631079|          87|     Ryan|   Getzlaf|
+| 55.24260969530533|          87|    Mikko|  Rantanen|
+| 83.25496879051704|          84|     John|   Tavares|
+| 81.47576192768784|          84|     Mark| Scheifele|
+|36.673744232384635|          84|    Mikko|  Rantanen|
+| 58.59223717284383|          83|Sebastian|       Aho|
+| 64.44653629433226|          83|    Brent|     Burns|
+| 81.98129312086743|          80|    Tyler|    Seguin|
+|  80.0723138053585|          79|    Jamie|      Benn|
+| 57.57311950131569|          78|   Johnny|  Gaudreau|
+| 73.17270779690398|          78|  Nicklas| Backstrom|
+| 89.87927694200442|          78|    Tyler|    Seguin|
+| 47.03413564651206|          76|     Jake|  Guentzel|
+| 91.92359314981267|          76|  Patrick|      Kane|
+| 69.94669150036644|          76|     Sean| Couturier|
+| 55.44428036974418|          76|     Alex| DeBrincat|
+| 39.40825583933817|          76|     Jiri|    Hudler|
+| 36.21087231346359|          76|     Eric|     Staal|
+| 46.47581871443358|          74|     Mika| Zibanejad|
+| 70.06496397394042|          73|   Claude|    Giroux|
+| 28.93506126252991|          73| Vladimir| Tarasenko|
+| 70.30655305403059|          72|   Evgeny| Kuznetsov|
+| 93.12940445371721|          72|   Evgeni|    Malkin|
+| 51.99588377282753|          70|     John|   Carlson|
+| 45.58324764975432|          70|     Matt|   Duchene|
+| 34.51972126669811|          70|    Logan|   Couture|
+|33.559588178997295|          69|     Rick|      Nash|
+|57.286775920310845|          69|    David|    Krejci|
+| 72.61859557837411|          69|  Patrick|      Kane|
+| 50.61962406908068|          69|  Rickard|    Rakell|
+| 85.78145402330802|          68|      Joe|  Pavelski|
+|23.610098857238718|          67|  Joffrey|     Lupul|
+| 69.42981769062219|          67|    Pavel|   Datsyuk|
+|53.596792121401585|          67|      Max|Pacioretty|
+| 58.21504140762818|          67|     John| Klingberg|
+| 38.89740582140952|          67|  Jaromir|      Jagr|
+| 61.25685962703107|          67|    Logan|   Couture|
+|  45.1172957044807|          66|   Nikita|  Kucherov|
+|46.385392847198844|          66|  Brayden|     Point|
+| 39.48487003904678|          66|  Jaromir|      Jagr|
+|31.319985592825574|          66|     Timo|     Meier|
+| 35.10848518070567|          65|      Max|Pacioretty|
+| 74.94189928651087|          64|   Steven|   Stamkos|
++------------------+------------+---------+----------+
+only showing top 50 rows
+
+GBTRegressor
+Forecast
++------------------+----------+-----------+
+|        prediction| firstName|   lastName|
++------------------+----------+-----------+
+|134.24774096146874|    Sidney|     Crosby|
+|121.80211882664504|   Patrick|       Kane|
+|120.28967403641319|      Brad|   Marchand|
+|117.58115599843552|    Nikita|   Kucherov|
+|112.74612098170849|      Leon|  Draisaitl|
+|107.40500594204545|    Connor|    McDavid|
+| 93.52137218807583|      Phil|     Kessel|
+| 91.45603081342549|     Blake|    Wheeler|
+| 90.73546245963347|      John|    Tavares|
+| 89.76540955591155|    Taylor|       Hall|
+| 89.05485594423644|    Evgeni|     Malkin|
+| 88.19852822987829|   Patrice|   Bergeron|
+|  88.1548593324052|     David|   Pastrnak|
+| 87.09897108092825|      Alex|   Ovechkin|
+| 85.00142162656812|   Nicklas|  Backstrom|
+| 84.84393596766209|    Steven|    Stamkos|
+| 83.90596867739848|     Tyler|     Seguin|
+| 82.53788061189982|  Jonathan|  Huberdeau|
+|  82.2271887753139|Aleksander|     Barkov|
+| 81.53471334062314|    Auston|   Matthews|
+|  81.5303857006662| Sebastian|        Aho|
+|  81.3569263190768|      Sean|    Monahan|
+| 79.46319498777103|      Mark|      Stone|
+| 78.88571766339695|     Mikko|   Rantanen|
+| 78.25200606459957|    Artemi|    Panarin|
+| 76.25400100317384|  Vladimir|  Tarasenko|
+| 75.95949845309008|     Elias| Pettersson|
+| 75.37724387296367|      Jack|     Eichel|
+| 74.21923805596602|      Mark|  Scheifele|
+| 69.67281353394391|      Timo|      Meier|
+| 68.96534130859789|      Jake|   Guentzel|
+| 68.89898830802643|     David|     Krejci|
+| 67.75413179541034|      Kris|     Letang|
+| 67.10808288054925|    Oliver|Bjorkstrand|
+|  66.2207770823052|     Logan|    Couture|
+| 65.56894238562244|     Torey|       Krug|
+| 65.22440868541659|      Sean|  Couturier|
+| 64.95959041424464|      Adam|   Henrique|
+| 64.81888315239745|     Teuvo| Teravainen|
+| 64.04555609204291|    Claude|     Giroux|
+|62.634208051399256|     Derek|     Stepan|
+| 62.61292715205184|   Anthony|    Cirelli|
+|62.273984344547536|   Gabriel|  Landeskog|
+| 62.21614506292503|      Ryan|   O'Reilly|
+| 61.31048275861435|       Cam|   Atkinson|
+| 60.86707368761219|      Josh|     Bailey|
+|59.619574477899135|     Filip|     Chytil|
+| 59.39432521871644|  Jonathan|      Toews|
+| 59.38832471466406|    Anders|        Lee|
+|  59.3362033856587|      Matt|    Duchene|
++------------------+----------+-----------+
+only showing top 50 rows
+
+GBTRegressor
+Root Mean Squared Error (RMSE) on test data = 14.025239187366727
