@@ -7,6 +7,6 @@ to extract the 625 best.
 
 Including LightLGBM training with Bayesian-optimization that lead to a ROC score of 0.793 after all that Time :(
 
-note 1: To avoid error it should run from the uziped file with all the data in the file. 
+note 1: To avoid error it should run from the uziped file with all the data in the file. Run __init__.py to start the applicaiton.
 
 note 2: To save time you can use user input to step directly to feature eng. or LGBM training and avoid Bayesian-optimization as option.
